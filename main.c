@@ -5,18 +5,10 @@
 
 FILE *db;
 
-char *strrev(char *str){
-      char *p1, *p2;
-
-      if (! str || ! *str)
-            return str;
-      for (p1 = str, p2 = str + strlen(str) - 1; p2 > p1; ++p1, --p2){
-            *p1 ^= *p2;
-            *p2 ^= *p1;
-            *p1 ^= *p2;
-      }
-      return str;
-}
+typedef struct{
+    char key[32];
+    unsigned long offset;
+} index_entry;
 
 uint8_t read(char wanted[32] , char val[1024], FILE *db){
     char c;
