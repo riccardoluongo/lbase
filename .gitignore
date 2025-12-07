@@ -1,3 +1,6 @@
 *.out
 *.sync-conflict*
 *test*
+client
+server
+build.sh
